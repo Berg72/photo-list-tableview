@@ -13,6 +13,11 @@
 		D9AA166F2699363600C4FDCC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9AA166D2699363600C4FDCC /* Main.storyboard */; };
 		D9AA16712699363800C4FDCC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9AA16702699363800C4FDCC /* Assets.xcassets */; };
 		D9AA16742699363800C4FDCC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9AA16722699363800C4FDCC /* LaunchScreen.storyboard */; };
+		D9AA1681269BA47400C4FDCC /* PhotoListCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AA167F269BA47400C4FDCC /* PhotoListCellTableViewCell.swift */; };
+		D9AA1682269BA47400C4FDCC /* PhotoListCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9AA1680269BA47400C4FDCC /* PhotoListCellTableViewCell.xib */; };
+		D9AA1684269BC1DA00C4FDCC /* PhotoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AA1683269BC1DA00C4FDCC /* PhotoList.swift */; };
+		D9AA1686269BC3DC00C4FDCC /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AA1685269BC3DC00C4FDCC /* API.swift */; };
+		D9AA16B026B0F2BF00C4FDCC /* PhotoDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AA16AF26B0F2BF00C4FDCC /* PhotoDatasource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		D9AA16702699363800C4FDCC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9AA16732699363800C4FDCC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9AA16752699363800C4FDCC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9AA167F269BA47400C4FDCC /* PhotoListCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCellTableViewCell.swift; sourceTree = "<group>"; };
+		D9AA1680269BA47400C4FDCC /* PhotoListCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoListCellTableViewCell.xib; sourceTree = "<group>"; };
+		D9AA1683269BC1DA00C4FDCC /* PhotoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoList.swift; sourceTree = "<group>"; };
+		D9AA1685269BC3DC00C4FDCC /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		D9AA16AF26B0F2BF00C4FDCC /* PhotoDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDatasource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,11 @@
 				D9AA16692699363600C4FDCC /* SceneDelegate.swift */,
 				D9AA166B2699363600C4FDCC /* ViewController.swift */,
 				D9AA166D2699363600C4FDCC /* Main.storyboard */,
+				D9AA1685269BC3DC00C4FDCC /* API.swift */,
+				D9AA16AF26B0F2BF00C4FDCC /* PhotoDatasource.swift */,
+				D9AA1683269BC1DA00C4FDCC /* PhotoList.swift */,
+				D9AA167F269BA47400C4FDCC /* PhotoListCellTableViewCell.swift */,
+				D9AA1680269BA47400C4FDCC /* PhotoListCellTableViewCell.xib */,
 				D9AA16702699363800C4FDCC /* Assets.xcassets */,
 				D9AA16722699363800C4FDCC /* LaunchScreen.storyboard */,
 				D9AA16752699363800C4FDCC /* Info.plist */,
@@ -124,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9AA1682269BA47400C4FDCC /* PhotoListCellTableViewCell.xib in Resources */,
 				D9AA16742699363800C4FDCC /* LaunchScreen.storyboard in Resources */,
 				D9AA16712699363800C4FDCC /* Assets.xcassets in Resources */,
 				D9AA166F2699363600C4FDCC /* Main.storyboard in Resources */,
@@ -137,8 +153,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9AA16B026B0F2BF00C4FDCC /* PhotoDatasource.swift in Sources */,
+				D9AA1681269BA47400C4FDCC /* PhotoListCellTableViewCell.swift in Sources */,
+				D9AA1684269BC1DA00C4FDCC /* PhotoList.swift in Sources */,
 				D9AA166C2699363600C4FDCC /* ViewController.swift in Sources */,
 				D9AA16682699363600C4FDCC /* AppDelegate.swift in Sources */,
+				D9AA1686269BC3DC00C4FDCC /* API.swift in Sources */,
 				D9AA166A2699363600C4FDCC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
