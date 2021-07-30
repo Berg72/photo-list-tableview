@@ -19,6 +19,7 @@ class PhotoDatasource {
   var currentPage = 1
   private var total = 1000
   private var isFetchInProgress = false
+    private var needsRefresh = false
   
   var totalCount: Int {
     return total
@@ -32,6 +33,16 @@ class PhotoDatasource {
     return photos[index]
   }
   
+    func refreshPhotos() {
+        if isFetchInProgress {
+        needsRefresh = true
+        } else {
+            self.photos.removeAll()
+            currentPage = 1
+            fetchPhotos()
+        }
+    }
+    
   func fetchPhotos() {
     // 1
     guard !isFetchInProgress else {
@@ -50,10 +61,19 @@ class PhotoDatasource {
         
         self.currentPage += 1
         self.isFetchInProgress = false
-        self.photos.append(contentsOf: response)
-//        if response.page > 1 {
+        if self.needsRefresh {
+            self.needsRefresh = false
+            self.photos.removeAll()
+            self.currentPage = 1
+            self.fetchPhotos()
+        } else {
+            self.photos.append(contentsOf: response)
             let indexPathsToReload = self.calculateIndexPathsToReload(from: response)
             self.delegate?.onFetchCompleted(with: indexPathsToReload)
+        }
+        
+//        if response.page > 1 {
+            
 //        } else {
 //            self.delegate?.onFetchCompleted(with: .none)
 //        }

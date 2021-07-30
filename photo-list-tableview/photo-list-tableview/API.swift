@@ -14,7 +14,7 @@ class API {
     
     func getPhotoData(page: Int, onComplete: @escaping (_ items: [PhotoList]?) -> ()) {
         
-        guard let url = URL(string: "https://api.unsplash.com/photos/?client_id=svXRThWsNdNleok_Es69R_QcvcQ6FEhDi3CuOlLS-QM&page=\(page)&per_page=15") else { return }
+        guard let url = URL(string: "https://api.unsplash.com/photos/?client_id=svXRThWsNdNleok_Es69R_QcvcQ6FEhDi3CuOlLS-QM&page=\(page)&per_page=15&order_by=popular") else { return }
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"

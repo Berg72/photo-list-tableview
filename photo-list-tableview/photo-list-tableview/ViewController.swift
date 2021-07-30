@@ -10,6 +10,14 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    private var photoDatasource = [PhotoList]()
+    private lazy var refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        control.tintColor = UIColor.black
+        control.addTarget(self, action: #selector(loadPhotoDataSource), for: .valueChanged)
+        control.attributedTitle = NSAttributedString(string: "Loading Posts...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.black])
+        return control
+    }()
     
     private let viewModel = PhotoDatasource()
 
@@ -33,11 +41,19 @@ private extension ViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.prefetchDataSource = self
+        tableView.refreshControl = refreshControl
+        
+    }
+    
+    @objc
+    func loadPhotoDataSource() {
+        viewModel.refreshPhotos()
     }
     
     func loadDatasource() {
         viewModel.fetchPhotos()
     }
+    
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -81,11 +97,13 @@ extension ViewController: PhotoDatasourceDelegate {
     guard let newIndexPathsToReload = newIndexPathsToReload else {
       tableView.isHidden = false
       tableView.reloadData()
+        refreshControl.endRefreshing()
       return
     }
     // 2
     let indexPathsToReload = visibleIndexPathsToReload(intersecting: newIndexPathsToReload)
     tableView.reloadRows(at: indexPathsToReload, with: .automatic)
+    refreshControl.endRefreshing()
   }
   
   func onFetchFailed(with reason: String) {
