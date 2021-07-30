@@ -58,10 +58,4 @@ class API {
         task.resume()
     }
     
-//    func fetchData(pagination: Bool = false, onComplete: @escaping (_ Result: String?) -> ()) {
-//        DispatchQueue.global().asyncAfter(deadline: .now() + 1, execute: {
-//            let data = PhotoList.
-//            onComplete(<#String?#>)
-//        })
-//    }
 }
